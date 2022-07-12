@@ -9,13 +9,22 @@
 /* Begin PBXBuildFile section */
 		846A829B287C8E490094438C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A829A287C8E490094438C /* AppDelegate.swift */; };
 		846A829D287C8E490094438C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A829C287C8E490094438C /* SceneDelegate.swift */; };
-		846A829F287C8E490094438C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A829E287C8E490094438C /* ViewController.swift */; };
+		846A829F287C8E490094438C /* SermonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A829E287C8E490094438C /* SermonViewController.swift */; };
 		846A82A2287C8E490094438C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846A82A0287C8E490094438C /* Main.storyboard */; };
 		846A82A4287C8E4B0094438C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A82A3287C8E4B0094438C /* Assets.xcassets */; };
 		846A82A7287C8E4B0094438C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846A82A5287C8E4B0094438C /* LaunchScreen.storyboard */; };
 		846A82B2287C8E4B0094438C /* sgbcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82B1287C8E4B0094438C /* sgbcTests.swift */; };
 		846A82BC287C8E4B0094438C /* sgbcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82BB287C8E4B0094438C /* sgbcUITests.swift */; };
 		846A82BE287C8E4B0094438C /* sgbcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82BD287C8E4B0094438C /* sgbcUITestsLaunchTests.swift */; };
+		846A82CF287C8EF20094438C /* SermonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82CE287C8EF20094438C /* SermonData.swift */; };
+		846A82D1287C8F280094438C /* Sermon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82D0287C8F280094438C /* Sermon.swift */; };
+		846A82D3287C8FCE0094438C /* PlayerTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82D2287C8FCE0094438C /* PlayerTransitionViewController.swift */; };
+		846A82D6287C92F50094438C /* SermonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82D4287C92F50094438C /* SermonTableViewCell.swift */; };
+		846A82D7287C92F50094438C /* SermonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846A82D5287C92F50094438C /* SermonTableViewCell.xib */; };
+		846A82D9287CB7FB0094438C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A82D8287CB7FB0094438C /* PlayerViewController.swift */; };
+		84CF1F20287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */; };
+		84CF1F21287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */; };
+		84E7AEA0287CFC8900C6F2E7 /* SermonBySeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +48,7 @@
 		846A8297287C8E490094438C /* sgbc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sgbc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A829A287C8E490094438C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846A829C287C8E490094438C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		846A829E287C8E490094438C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		846A829E287C8E490094438C /* SermonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonViewController.swift; sourceTree = "<group>"; };
 		846A82A1287C8E490094438C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		846A82A3287C8E4B0094438C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846A82A6287C8E4B0094438C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,15 @@
 		846A82B7287C8E4B0094438C /* sgbcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sgbcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A82BB287C8E4B0094438C /* sgbcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sgbcUITests.swift; sourceTree = "<group>"; };
 		846A82BD287C8E4B0094438C /* sgbcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sgbcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		846A82CE287C8EF20094438C /* SermonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonData.swift; sourceTree = "<group>"; };
+		846A82D0287C8F280094438C /* Sermon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sermon.swift; sourceTree = "<group>"; };
+		846A82D2287C8FCE0094438C /* PlayerTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTransitionViewController.swift; sourceTree = "<group>"; };
+		846A82D4287C92F50094438C /* SermonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonTableViewCell.swift; sourceTree = "<group>"; };
+		846A82D5287C92F50094438C /* SermonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonTableViewCell.xib; sourceTree = "<group>"; };
+		846A82D8287CB7FB0094438C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonBySeriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySeriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +117,10 @@
 		846A8299287C8E490094438C /* sgbc */ = {
 			isa = PBXGroup;
 			children = (
-				846A829A287C8E490094438C /* AppDelegate.swift */,
-				846A829C287C8E490094438C /* SceneDelegate.swift */,
-				846A829E287C8E490094438C /* ViewController.swift */,
-				846A82A0287C8E490094438C /* Main.storyboard */,
+				846A82CD287C8ED60094438C /* Data */,
+				846A82CC287C8E6D0094438C /* Model */,
+				846A82CB287C8E680094438C /* View */,
+				846A82CA287C8E620094438C /* Controller */,
 				846A82A3287C8E4B0094438C /* Assets.xcassets */,
 				846A82A5287C8E4B0094438C /* LaunchScreen.storyboard */,
 				846A82A8287C8E4B0094438C /* Info.plist */,
@@ -125,6 +143,47 @@
 				846A82BD287C8E4B0094438C /* sgbcUITestsLaunchTests.swift */,
 			);
 			path = sgbcUITests;
+			sourceTree = "<group>";
+		};
+		846A82CA287C8E620094438C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				846A829E287C8E490094438C /* SermonViewController.swift */,
+				846A82D2287C8FCE0094438C /* PlayerTransitionViewController.swift */,
+				846A82D8287CB7FB0094438C /* PlayerViewController.swift */,
+				84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		846A82CB287C8E680094438C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				846A82A0287C8E490094438C /* Main.storyboard */,
+				846A82D4287C92F50094438C /* SermonTableViewCell.swift */,
+				846A82D5287C92F50094438C /* SermonTableViewCell.xib */,
+				84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */,
+				84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		846A82CC287C8E6D0094438C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				846A829A287C8E490094438C /* AppDelegate.swift */,
+				846A829C287C8E490094438C /* SceneDelegate.swift */,
+				846A82D0287C8F280094438C /* Sermon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		846A82CD287C8ED60094438C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				846A82CE287C8EF20094438C /* SermonData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CF1F21287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib in Resources */,
 				846A82A7287C8E4B0094438C /* LaunchScreen.storyboard in Resources */,
 				846A82A4287C8E4B0094438C /* Assets.xcassets in Resources */,
 				846A82A2287C8E490094438C /* Main.storyboard in Resources */,
+				846A82D7287C92F50094438C /* SermonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846A829F287C8E490094438C /* ViewController.swift in Sources */,
+				846A82D3287C8FCE0094438C /* PlayerTransitionViewController.swift in Sources */,
+				846A82D9287CB7FB0094438C /* PlayerViewController.swift in Sources */,
+				846A829F287C8E490094438C /* SermonViewController.swift in Sources */,
+				846A82CF287C8EF20094438C /* SermonData.swift in Sources */,
+				846A82D6287C92F50094438C /* SermonTableViewCell.swift in Sources */,
+				84E7AEA0287CFC8900C6F2E7 /* SermonBySeriesViewController.swift in Sources */,
+				846A82D1287C8F280094438C /* Sermon.swift in Sources */,
 				846A829B287C8E490094438C /* AppDelegate.swift in Sources */,
+				84CF1F20287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift in Sources */,
 				846A829D287C8E490094438C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +511,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +540,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
