@@ -13,6 +13,9 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
     let itemsPerRow: CGFloat = 3
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     @IBOutlet weak var SermonBySeriesCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -21,6 +24,11 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
         SermonBySeriesCollectionView.dataSource = self
         SermonBySeriesCollectionView.register(UINib(nibName: "SermonBySeriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeriesCollectionViewCell")
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
     
     

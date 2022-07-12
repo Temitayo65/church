@@ -344,9 +344,24 @@
                                             <constraint firstAttribute="height" constant="200" id="mLZ-xW-XKX"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pM-Dl-S2Y">
+                                        <rect key="frame" x="0.0" y="5" width="44" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="RwF-9w-HDj"/>
+                                            <constraint firstAttribute="height" constant="35" id="cGD-m5-TWa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=""/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="4Qh-tK-F7F" eventType="touchUpInside" id="OMf-5v-FLh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="5pM-Dl-S2Y" firstAttribute="top" secondItem="tkW-NI-DDp" secondAttribute="top" constant="5" id="27l-qW-IOL"/>
+                                    <constraint firstItem="5pM-Dl-S2Y" firstAttribute="leading" secondItem="tkW-NI-DDp" secondAttribute="leading" id="Gn6-23-8Ib"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5pM-Dl-S2Y" secondAttribute="trailing" constant="20" symbolic="YES" id="Ih4-n2-IEe"/>
                                     <constraint firstItem="HED-Rb-dK9" firstAttribute="leading" secondItem="tkW-NI-DDp" secondAttribute="leading" id="Qal-Mb-EZ5"/>
                                     <constraint firstAttribute="bottom" secondItem="HED-Rb-dK9" secondAttribute="bottom" id="qcR-K5-g7Y"/>
                                     <constraint firstAttribute="trailing" secondItem="HED-Rb-dK9" secondAttribute="trailing" id="xV0-ka-X7U"/>
@@ -369,6 +384,7 @@
                     <navigationItem key="navigationItem" id="180-Yj-oh6"/>
                     <connections>
                         <outlet property="SermonBySeriesCollectionView" destination="t7h-7C-F4W" id="wez-MF-pzf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToRoot" id="tek-iV-xPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXb-Uk-pOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -382,13 +398,27 @@
                     <view key="view" contentMode="scaleToFill" id="FT4-e6-kOQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-eE-Xra">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem selectedImage="house.fill" catalog="system" id="sOs-Id-1eL"/>
+                                    <tabBarItem tag="1" title="Item" selectedImage="play.rectangle.fill" catalog="system" id="5py-dg-2HS"/>
+                                    <tabBarItem tag="2" title="Item" selectedImage="newspaper.fill" catalog="system" id="AYq-AK-H85"/>
+                                    <tabBarItem title="Item" selectedImage="magnifyingglass" catalog="system" id="cdp-cw-jJw"/>
+                                    <tabBarItem selectedImage="person" catalog="system" id="2V8-T1-7fK"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oFj-M8-X7S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jc6-3T-jGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="882"/>
+            <point key="canvasLocation" x="-601.44927536231887" y="126.5625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lSJ-UK-Nde">
@@ -439,9 +469,18 @@
             <point key="canvasLocation" x="246" y="94"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="koj-m6-sa2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="b" width="480" height="480"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

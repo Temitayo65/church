@@ -32,6 +32,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyM-Dm-0Ib">
+                        <rect key="frame" x="5" y="46" width="165" height="165"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="165" id="50E-kR-qoZ"/>
+                            <constraint firstAttribute="width" constant="165" id="NCA-KY-qqa"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -39,6 +48,8 @@
                 <constraint firstItem="s5K-bz-moq" firstAttribute="centerX" secondItem="bIm-66-cFS" secondAttribute="centerX" id="HJ5-Vw-Ltz"/>
                 <constraint firstItem="bIm-66-cFS" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="2" id="eFX-Gw-yN8"/>
                 <constraint firstItem="bIm-66-cFS" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="gR0-yz-zKF"/>
+                <constraint firstItem="nyM-Dm-0Ib" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="jPg-cQ-YmW"/>
+                <constraint firstItem="nyM-Dm-0Ib" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="2" id="mMd-SB-LXT"/>
                 <constraint firstItem="s5K-bz-moq" firstAttribute="top" secondItem="bIm-66-cFS" secondAttribute="bottom" constant="3" id="mk2-Q3-43v"/>
             </constraints>
             <size key="customSize" width="200" height="380"/>
