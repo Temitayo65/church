@@ -92,5 +92,8 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
         performSegue(withIdentifier: "SermonBySeriesIdentifier", sender: self)
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 

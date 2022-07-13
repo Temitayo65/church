@@ -23,7 +23,7 @@ class SermonBySeriesCollectionViewCell: UICollectionViewCell {
             self.preacherImage.image = UIImage(named: sermon[indexPath.row].imageName)
             self.preacherName.text = sermon[indexPath.row].preacher
             self.preacherName.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-            self.preacherImage.layer.cornerRadius = 10
+            self.preacherImage.layer.cornerRadius = 5
         }
   
 }

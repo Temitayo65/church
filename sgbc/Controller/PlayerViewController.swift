@@ -29,6 +29,15 @@ class PlayerViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     @IBAction func playAudio(_ sender: Any) {
         print("The audio is being played")
         print("The audio being played is \(sermonUpdate.title)")

@@ -14,7 +14,7 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
     @IBAction func backButtonPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBOutlet weak var SermonBySeriesCollectionView: UICollectionView!
