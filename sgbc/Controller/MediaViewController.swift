@@ -9,7 +9,7 @@ import UIKit
 
 class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let mediaCategoryData = HomeData().getMeidaCategories()
+    let mediaCategoryData = HomeData().getMediaCategories()
     @IBOutlet weak var MediaTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

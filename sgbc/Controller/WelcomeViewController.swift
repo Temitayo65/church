@@ -21,6 +21,9 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         navigationController?.navigationBar.isHidden = true
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryData.count
@@ -43,6 +46,12 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let cell = tableView.cellForRow(at: indexPath) as? HomeTableViewCell {
             if cell.categoryLabel.text == "About SGBC"{
                 performSegue(withIdentifier: "aboutIdentifier", sender: self)
+            }
+            else if cell.categoryLabel.text == "SGBC'S Leadership"{
+                performSegue(withIdentifier: "leadershipidentifier", sender: self)
+            }
+            else if cell.categoryLabel.text == "Ministries"{
+                performSegue(withIdentifier: "ministriesIdentifier", sender: self)
             }
         }
     }

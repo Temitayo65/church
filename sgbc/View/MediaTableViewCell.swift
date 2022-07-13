@@ -9,7 +9,7 @@ import UIKit
 
 class MediaTableViewCell: UITableViewCell {
 
-    let category = HomeData().getMeidaCategories()
+    let category = HomeData().getMediaCategories()
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     override func awakeFromNib() {
