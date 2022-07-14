@@ -10,6 +10,7 @@ import UIKit
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let newsData: [News] = NewsData().getNews()
+    var headerSent: String = ""
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -27,7 +28,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        navigationController?.navigationBar.isHidden = true 
+        navigationController?.navigationBar.isHidden = false
+        // let backButtonBackgroundImage = UIImage(systemName: "arrow.backward")
+        let backBarButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButton
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +41,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCellIdentifier", for: indexPath) as? NewsTableViewCell{
             cell.configureCell(with: newsData, atIndex: indexPath)
-        
             return cell
         }
         return UITableViewCell()
@@ -47,6 +50,23 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return CGFloat(180)
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newsdetailsidentifier" {
+            let newsDetailsVC = segue.destination as! NewsDetailsViewController
+            newsDetailsVC.headerSent = headerSent
+        }
+        
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            headerSent = newsData[indexPath.row].topic
+            performSegue(withIdentifier: "newsdetailsidentifier", sender: self)
+        
+    }
+  
     
     
     
