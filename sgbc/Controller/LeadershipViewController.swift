@@ -24,6 +24,11 @@ class LeadershipViewController: UIViewController, UICollectionViewDelegate, UICo
         leadershipBackImage.image = UIImage(named: "t")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // tabBarController?.tabBar.isHidden = true // may not be needed to be hidden 
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sermons.count
     }

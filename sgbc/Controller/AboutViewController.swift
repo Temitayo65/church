@@ -22,11 +22,13 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
         AboutTableView.dataSource = self
         AboutTableView.register(UINib(nibName: "AboutTableViewCell", bundle: nil), forCellReuseIdentifier: "AboutCellIdentifier")
         aboutHeaderImageView.image = UIImage(named: "d")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,8 +53,6 @@ class AboutViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
    
     
-    
-
     
 
 }

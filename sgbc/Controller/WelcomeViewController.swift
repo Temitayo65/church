@@ -19,8 +19,9 @@ class WelcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.navigationBar.isHidden = true
-        
+    
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
