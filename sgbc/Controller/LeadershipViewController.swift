@@ -26,7 +26,7 @@ class LeadershipViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        // tabBarController?.tabBar.isHidden = true // may not be needed to be hidden 
+        // tabBarController?.tabBar.isHidden = true // may not be needed to be hidden /Users/admin/Downloads/SWIFT/CHURCH/sgbc/sgbc/Controller/LeadershipViewController.swift
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,7 +51,7 @@ class LeadershipViewController: UIViewController, UICollectionViewDelegate, UICo
 extension LeadershipViewController: UICollectionViewDelegateFlowLayout{
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 300, height: 600)
+            return CGSize(width: 300, height: 650)
         }
     
 }

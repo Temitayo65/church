@@ -23,17 +23,17 @@
                             <constraint firstAttribute="height" constant="130" id="tyI-oD-Hkk"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sermon_Podcat_Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-gf-yfZ">
-                        <rect key="frame" x="153" y="12" width="164" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="MNP-cq-QT9"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sermon_Podcast_Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-gf-yfZ">
+                        <rect key="frame" x="153" y="12" width="228" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-7F-AW7">
-                        <rect key="frame" x="153" y="41" width="71" height="21"/>
+                        <rect key="frame" x="153" y="40.5" width="71" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="dcI-vT-boc"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                 <constraints>
                     <constraint firstItem="IAP-7F-AW7" firstAttribute="top" secondItem="Zka-gf-yfZ" secondAttribute="bottom" constant="8" symbolic="YES" id="2V9-G6-6sp"/>
                     <constraint firstItem="IAP-7F-AW7" firstAttribute="leading" secondItem="qjB-bl-1SL" secondAttribute="trailing" constant="8" symbolic="YES" id="30W-MV-Do5"/>
-                    <constraint firstItem="IAP-7F-AW7" firstAttribute="width" secondItem="Zka-gf-yfZ" secondAttribute="width" multiplier="0.432927" id="TW5-bE-Elm"/>
+                    <constraint firstAttribute="trailing" secondItem="Zka-gf-yfZ" secondAttribute="trailing" constant="10" id="Bmg-he-Rln"/>
                     <constraint firstItem="qjB-bl-1SL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="eg3-xU-Jyt"/>
                     <constraint firstItem="Zka-gf-yfZ" firstAttribute="leading" secondItem="qjB-bl-1SL" secondAttribute="trailing" constant="8" symbolic="YES" id="io3-E2-Qqg"/>
                     <constraint firstItem="qjB-bl-1SL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lLs-KE-bfC"/>

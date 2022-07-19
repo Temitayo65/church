@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var secondDataReceived : [Podcast] = PodcastData().getPodcasts()
     var secondfilteredData : [Any]!
     var all_data: [Any] = []
+    var searchBarIsEmpty = true
 
      
     override func viewDidLoad() {
@@ -27,15 +28,24 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "searchtablecell")
         searchBar.delegate = self
         secondfilteredData = all_data
-        searchTableView.isHidden = false 
+        searchTableView.isHidden = false
+        self.searchTableView.keyboardDismissMode = .onDrag
+        self.hideKeyboardWhenTappedAround()
+       
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         searchTableView.isHidden = true
-       
-    
+        // This helps to hide show the tableview when the navigationbar is on another screen
+        // and the search bar still contains some text that show that the search is still on
+        if !searchBarIsEmpty{
+            searchTableView.isHidden = false
+        }
+        else{
+            searchTableView.isHidden = true
+        }
     }
     
     
@@ -67,12 +77,14 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if searchText == ""{
+            searchBarIsEmpty = true
             searchTableView.isHidden = true
-            tabBarController?.tabBar.isHidden = false
+            // tabBarController?.tabBar.isHidden = false
         }
         else{
-            tabBarController?.tabBar.isHidden = true
+            // tabBarController?.tabBar.isHidden = true
             searchTableView.isHidden = false
+            searchBarIsEmpty = false
             for item in all_data{
                 if item is Sermon{
                     let gottenItem = item as! Sermon
@@ -94,5 +106,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.searchTableView.reloadData()
     }
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+   
+  
     
 }
