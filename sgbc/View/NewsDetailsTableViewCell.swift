@@ -30,7 +30,6 @@ class NewsDetailsTableViewCell: UITableViewCell {
         //print(last_part) // Debug rhis part when you awaken
         newsDetailsFirstContent.text = first_part
         newsDetailsSecondContent.text = last_part
-        
         newsDetailsImageView.layer.cornerRadius = 10
         
     }

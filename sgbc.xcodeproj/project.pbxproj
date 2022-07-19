@@ -50,10 +50,10 @@
 		8493572A287E0EA6008BC6D1 /* StartingCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84935729287E0EA6008BC6D1 /* StartingCategories.swift */; };
 		8493572C287E0FCE008BC6D1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493572B287E0FCE008BC6D1 /* News.swift */; };
 		8493572E287E1321008BC6D1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493572D287E1321008BC6D1 /* WelcomeViewController.swift */; };
-		84CF1F20287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */; };
-		84CF1F21287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */; };
+		84CF1F20287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1F1E287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift */; };
+		84CF1F21287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1F1F287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib */; };
 		84DEC82A287F6FBF009D2DD9 /* MinistriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DEC829287F6FBF009D2DD9 /* MinistriesViewController.swift */; };
-		84E7AEA0287CFC8900C6F2E7 /* SermonBySeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */; };
+		84E7AEA0287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */; };
 		84ED6601287DF7F0003946D4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED65FF287DF7F0003946D4 /* HomeTableViewCell.swift */; };
 		84ED6602287DF7F0003946D4 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ED6600287DF7F0003946D4 /* HomeTableViewCell.xib */; };
 		84EF25BF2885BC860086F3A0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF25BE2885BC860086F3A0 /* SearchViewController.swift */; };
@@ -124,10 +124,10 @@
 		84935729287E0EA6008BC6D1 /* StartingCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingCategories.swift; sourceTree = "<group>"; };
 		8493572B287E0FCE008BC6D1 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		8493572D287E1321008BC6D1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySeriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonBySeriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		84CF1F1E287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySpeakersCollectionViewCell.swift; sourceTree = "<group>"; };
+		84CF1F1F287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonBySpeakersCollectionViewCell.xib; sourceTree = "<group>"; };
 		84DEC829287F6FBF009D2DD9 /* MinistriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinistriesViewController.swift; sourceTree = "<group>"; };
-		84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySeriesViewController.swift; sourceTree = "<group>"; };
+		84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySpeakersViewController.swift; sourceTree = "<group>"; };
 		84ED65FF287DF7F0003946D4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		84ED6600287DF7F0003946D4 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		84EF25BE2885BC860086F3A0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				846A829E287C8E490094438C /* SermonViewController.swift */,
 				846A82D2287C8FCE0094438C /* PlayerTransitionViewController.swift */,
 				846A82D8287CB7FB0094438C /* PlayerViewController.swift */,
-				84E7AE9F287CFC8900C6F2E7 /* SermonBySeriesViewController.swift */,
+				84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */,
 				84618A0F287F0C4E00F31F5B /* NewsViewController.swift */,
 				84618A1B287F1E9500F31F5B /* AboutViewController.swift */,
 				842B8C6F287F4FB2008B0BF3 /* LeadershipViewController.swift */,
@@ -235,8 +235,8 @@
 				846A82A0287C8E490094438C /* Main.storyboard */,
 				846A82D4287C92F50094438C /* SermonTableViewCell.swift */,
 				846A82D5287C92F50094438C /* SermonTableViewCell.xib */,
-				84CF1F1E287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift */,
-				84CF1F1F287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib */,
+				84CF1F1E287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift */,
+				84CF1F1F287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib */,
 				84ED65FF287DF7F0003946D4 /* HomeTableViewCell.swift */,
 				84ED6600287DF7F0003946D4 /* HomeTableViewCell.xib */,
 				84618A07287ED85700F31F5B /* MediaTableViewCell.swift */,
@@ -387,7 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84618A18287F1A6000F31F5B /* AboutTableViewCell.xib in Resources */,
-				84CF1F21287DB17A006909CE /* SermonBySeriesCollectionViewCell.xib in Resources */,
+				84CF1F21287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib in Resources */,
 				846A82A7287C8E4B0094438C /* LaunchScreen.storyboard in Resources */,
 				8430E6F6287F8D230025287E /* NewsDetailsTableViewCell.xib in Resources */,
 				846A82A4287C8E4B0094438C /* Assets.xcassets in Resources */,
@@ -442,14 +442,14 @@
 				8430E6FE288035860025287E /* QA.swift in Sources */,
 				846A82D6287C92F50094438C /* SermonTableViewCell.swift in Sources */,
 				84ED6601287DF7F0003946D4 /* HomeTableViewCell.swift in Sources */,
-				84E7AEA0287CFC8900C6F2E7 /* SermonBySeriesViewController.swift in Sources */,
+				84E7AEA0287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift in Sources */,
 				8430E6F8288032E60025287E /* PodcastData.swift in Sources */,
 				846A82D1287C8F280094438C /* Sermon.swift in Sources */,
 				84DEC82A287F6FBF009D2DD9 /* MinistriesViewController.swift in Sources */,
 				846A829B287C8E490094438C /* AppDelegate.swift in Sources */,
 				8430E6FC288033B30025287E /* Devotional.swift in Sources */,
 				8430E6FA288033A90025287E /* Podcast.swift in Sources */,
-				84CF1F20287DB17A006909CE /* SermonBySeriesCollectionViewCell.swift in Sources */,
+				84CF1F20287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift in Sources */,
 				8493572C287E0FCE008BC6D1 /* News.swift in Sources */,
 				8430E6F2287F8CEC0025287E /* NewsDetailsViewController.swift in Sources */,
 				842B8C70287F4FB2008B0BF3 /* LeadershipViewController.swift in Sources */,

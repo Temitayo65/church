@@ -1,5 +1,5 @@
 //
-//  SermonBySeriesViewController.swift
+//  SermonBySpeakersViewController.swift
 //  sgbc
 //
 //  Created by ADMIN on 12/07/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SermonBySpeakersViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     let sermons = SermonData().getSermon()
     var sermonUpdate = Sermon()
     let itemsPerRow: CGFloat = 3
@@ -17,12 +17,12 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
         navigationController?.popViewController(animated: true)
     }
     
-    @IBOutlet weak var SermonBySeriesCollectionView: UICollectionView!
+    @IBOutlet weak var SermonBySpeakersCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        SermonBySeriesCollectionView.delegate = self
-        SermonBySeriesCollectionView.dataSource = self
-        SermonBySeriesCollectionView.register(UINib(nibName: "SermonBySeriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SeriesCollectionViewCell")
+        SermonBySpeakersCollectionView.delegate = self
+        SermonBySpeakersCollectionView.dataSource = self
+        SermonBySpeakersCollectionView.register(UINib(nibName: "SermonBySpeakersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SpeakersCollectionViewCell")
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
@@ -38,7 +38,7 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = SermonBySeriesCollectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCollectionViewCell", for: indexPath) as? SermonBySeriesCollectionViewCell{
+        if let cell = SermonBySpeakersCollectionView.dequeueReusableCell(withReuseIdentifier: "SpeakersCollectionViewCell", for: indexPath) as? SermonBySpeakersCollectionViewCell{
             cell.configureCell(with: sermons, atIndex: indexPath)
             return cell
         }
@@ -53,7 +53,7 @@ class SermonBySeriesViewController: UIViewController, UICollectionViewDelegate, 
 }
 
 
-extension SermonBySeriesViewController: UICollectionViewDelegateFlowLayout{
+extension SermonBySpeakersViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
            return 0.0
        }

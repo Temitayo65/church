@@ -13,8 +13,8 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topViewImage: UIImageView!
     @IBOutlet weak var recentsButton: UIButton!
-    @IBOutlet weak var seriesButton: UIButton!
     @IBOutlet weak var booksButton: UIButton!
+    @IBOutlet weak var seriesButton: UIButton!
     @IBOutlet weak var speakersButton: UIButton!
     
     let sermons = SermonData().getSermon()
@@ -84,14 +84,14 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
             let playerTransitionVC = segue.destination as! PlayerTransitionViewController
             playerTransitionVC.sermonUpdate = sermonUpdate
         }
-        else if segue.identifier == "SermonBySeriesIdentifier"{
-            let sermonBySeriesTransitionVC = segue.destination as! SermonBySeriesViewController
-            sermonBySeriesTransitionVC.sermonUpdate = sermonUpdate
+        else if segue.identifier == "SermonBySpeakersIdentifier"{
+            let sermonBySpeakersTransitionVC = segue.destination as! SermonBySpeakersViewController
+            sermonBySpeakersTransitionVC.sermonUpdate = sermonUpdate
         }
     }
     
-    @IBAction func pressSeries(_ sender: Any) {
-        performSegue(withIdentifier: "SermonBySeriesIdentifier", sender: self)
+    @IBAction func speakerButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "SermonBySpeakersIdentifier", sender: self)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

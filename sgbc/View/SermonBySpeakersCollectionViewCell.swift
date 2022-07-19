@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SermonBySeriesCollectionViewCell: UICollectionViewCell {
+class SermonBySpeakersCollectionViewCell: UICollectionViewCell {
 
         @IBOutlet weak var preacherImage: UIImageView!
         @IBOutlet weak var preacherName: UILabel!
