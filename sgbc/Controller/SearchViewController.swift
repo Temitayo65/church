@@ -19,6 +19,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var secondfilteredData : [Any]!
     var all_data: [Any] = []
     var searchBarIsEmpty = true
+    var dataFromSearch: Any = ""
 
      
     override func viewDidLoad() {
@@ -79,10 +80,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if searchText == ""{
             searchBarIsEmpty = true
             searchTableView.isHidden = true
-            // tabBarController?.tabBar.isHidden = false
         }
         else{
-            // tabBarController?.tabBar.isHidden = true
             searchTableView.isHidden = false
             searchBarIsEmpty = false
             for item in all_data{
@@ -109,6 +108,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        dataFromSearch = secondfilteredData[indexPath.row]
+        performSegue(withIdentifier: "searchToPlayerTransIdentifier", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "searchToPlayerTransIdentifier"{
+            let transitioinVC = segue.destination as! PlayerTransitionViewController
+            transitioinVC.dataFromSearch = self.dataFromSearch
+        }
     }
     
     

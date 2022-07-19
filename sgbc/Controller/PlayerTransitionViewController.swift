@@ -18,26 +18,43 @@ class PlayerTransitionViewController: UIViewController {
     @IBOutlet weak var preacherTitleLabel: UILabel!
     
     var sermonUpdate: Sermon = Sermon()
+    var dataFromSearch : Any = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         bottomView.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
-        transitionImageView.layer.masksToBounds = true
-        transitionImageView.layer.cornerRadius = 20
-        transitionImageView.image = UIImage(named: sermonUpdate.imageName)
-        synopsisTextLabel.text = sermonUpdate.synopsis
-        synopsisTextLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        synopsisLogoImageView.image = UIImage(named: "synopsis")
-        preacherTitleLabel.text = sermonUpdate.preacher
-        preacherTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
-        sermonTitleLabel.text = sermonUpdate.title
-        sermonTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        if dataFromSearch is Sermon{
+            let dataToSet = dataFromSearch as! Sermon
+            setLoadView(data: dataToSet)
+        }
+        else if dataFromSearch is Podcast{
+            let dataToSet = dataFromSearch as! Podcast
+            setLoadView(data: dataToSet)
+        }
+        else{
+            let dataToSet = sermonUpdate
+            setLoadView(data: dataToSet)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        
+        if dataFromSearch is Sermon{
+            let dataToSet = dataFromSearch as! Sermon
+            setLoadView(data: dataToSet)
+        }
+        else if dataFromSearch is Podcast {
+            let dataToSet = dataFromSearch as! Podcast
+            setLoadView(data: dataToSet)
+        }
+        else{
+            let dataToSet = sermonUpdate
+            setLoadView(data: dataToSet)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,7 +64,17 @@ class PlayerTransitionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PlayingSermonIdentifier" {
             let playerTransitionVC = segue.destination as! PlayerViewController
-            playerTransitionVC.sermonUpdate = sermonUpdate
+            if dataFromSearch is Sermon{
+                let data = dataFromSearch as! Sermon
+                playerTransitionVC.sermonUpdate = data
+            }
+            else if dataFromSearch is Podcast{
+                let data = dataFromSearch as! Podcast
+                playerTransitionVC.sermonUpdate = data 
+            }
+            else{
+                playerTransitionVC.sermonUpdate = sermonUpdate
+            }
         }
     }
     
@@ -56,6 +83,34 @@ class PlayerTransitionViewController: UIViewController {
         performSegue(withIdentifier: "PlayingSermonIdentifier", sender: self)
     }
     
+    func setLoadView(data dataToLoad: Any){
+        if dataToLoad is Sermon{
+        let sermon = dataToLoad as! Sermon
+        transitionImageView.layer.masksToBounds = true
+        transitionImageView.layer.cornerRadius = 20
+        transitionImageView.image = UIImage(named: sermon.imageName)
+        synopsisTextLabel.text = sermon.synopsis
+        synopsisTextLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        synopsisLogoImageView.image = UIImage(named: "synopsis")
+        preacherTitleLabel.text = sermon.preacher
+        preacherTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        sermonTitleLabel.text = sermon.title
+        sermonTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        }
+        else if dataToLoad is Podcast{
+        let podcast = dataToLoad as! Podcast
+        transitionImageView.layer.masksToBounds = true
+        transitionImageView.layer.cornerRadius = 20
+        transitionImageView.image = UIImage(named: podcast.podcastImageName)
+        synopsisTextLabel.text = "We pray you be Blessed as You Listen"
+        synopsisTextLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        synopsisLogoImageView.image = UIImage(named: "synopsis")
+        preacherTitleLabel.text = "SGBC"
+        preacherTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        sermonTitleLabel.text = podcast.podcastTitle
+        sermonTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        }
+    }
 
 
 }

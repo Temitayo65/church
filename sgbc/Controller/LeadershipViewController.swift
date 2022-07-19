@@ -51,7 +51,7 @@ class LeadershipViewController: UIViewController, UICollectionViewDelegate, UICo
 extension LeadershipViewController: UICollectionViewDelegateFlowLayout{
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 300, height: 650)
+            return CGSize(width: 300, height: 600)
         }
     
 }

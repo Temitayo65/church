@@ -443,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2l-j8-LS4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701" y="896"/>
+            <point key="canvasLocation" x="1852" y="896"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="Hop-50-kZc">
@@ -529,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHp-3d-G24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="896"/>
+            <point key="canvasLocation" x="2699" y="896"/>
         </scene>
         <!--Sermon By Series View Controller-->
         <scene sceneID="SkL-Wl-7Or">
@@ -981,6 +981,7 @@
                     <connections>
                         <outlet property="searchBar" destination="gga-AT-Qx6" id="t1X-98-JsB"/>
                         <outlet property="searchTableView" destination="prR-zD-Cgb" id="ArE-gc-JSc"/>
+                        <segue destination="ttC-6W-IYP" kind="show" identifier="searchToPlayerTransIdentifier" id="66o-Ra-g9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwE-OG-wfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1103,6 +1104,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="66o-Ra-g9s"/>
         <segue reference="ecn-ex-eqG"/>
     </inferredMetricsTieBreakers>
     <resources>
