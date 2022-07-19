@@ -12,13 +12,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     @IBOutlet weak var searchTableView: UITableView!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     var dataReceived : [Sermon] = SermonData().getSermon()
     var secondDataReceived : [Podcast] = PodcastData().getPodcasts()
-    var filteredData : [Sermon]!
     var secondfilteredData : [Any]!
+    var all_data: [Any] = []
 
      
     override func viewDidLoad() {
@@ -27,8 +26,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.dataSource = self
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "searchtablecell")
         searchBar.delegate = self
-        filteredData = dataReceived
-        secondfilteredData = secondDataReceived
+        secondfilteredData = all_data
         searchTableView.isHidden = false 
         
     }
@@ -36,16 +34,19 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         searchTableView.isHidden = true
+       
+    
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        return secondfilteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "searchtablecell", for: indexPath) as? SearchTableViewCell{
-            cell.configureCell(data: filteredData, index: indexPath)
+            // cell.configureCell(data: filteredData, index: indexPath)
+            cell.configurecell(data: secondfilteredData, index: indexPath)
             return cell
         }
         return UITableViewCell()
@@ -56,7 +57,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = []
+        secondfilteredData = []
         var all_data: [Any] = []
         for data in dataReceived{
             all_data.append(data)
@@ -64,22 +65,34 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         for sdata in secondDataReceived{
             all_data.append(sdata)
         }
-        print("All data:" ,all_data)
         
         if searchText == ""{
             searchTableView.isHidden = true
+            tabBarController?.tabBar.isHidden = false
         }
         else{
-            
+            tabBarController?.tabBar.isHidden = true
             searchTableView.isHidden = false
-            for sermon in dataReceived{
-                if (sermon.title.lowercased()).contains(searchText.lowercased()) || (sermon.preacher.lowercased()).contains(searchText.lowercased()){
-                    filteredData.append(sermon)
+            for item in all_data{
+                if item is Sermon{
+                    let gottenItem = item as! Sermon
+                    if gottenItem.title.lowercased().contains(searchText.lowercased()) || gottenItem.preacher.lowercased().contains(searchText.lowercased()) {
+                        secondfilteredData.append(gottenItem)
                     }
+                        
                 }
+                else if item is Podcast{
+                    let gottenItem = item as! Podcast
+                    if gottenItem.podcastTitle.lowercased().contains(searchText.lowercased()) || gottenItem.episode!.lowercased().contains(searchText.lowercased()){
+                        secondfilteredData.append(gottenItem)
+                    }
+                                        
+                }
+            }
+
         }
         self.searchTableView.reloadData()
     }
-    
+
     
 }

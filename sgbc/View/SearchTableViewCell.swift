@@ -27,4 +27,23 @@ class SearchTableViewCell: UITableViewCell {
     
     // Create another configure cell function that works based on the category
     
+    func configurecell(data searchData: [Any], index indexPath: IndexPath){
+        
+        if searchData[indexPath.row] is Sermon{
+            let data = searchData[indexPath.row] as! Sermon
+            sermonPodcastImageView.image = UIImage(named: data.imageName)
+            sermonPodcastTitle.text = data.title
+            categoryTitle.text = "Sermon"
+        }
+        else if searchData[indexPath.row] is Podcast{
+            let data = searchData[indexPath.row] as! Podcast
+            sermonPodcastImageView.image = UIImage(named: data.podcastImageName)
+            sermonPodcastTitle.text = data.podcastTitle
+            categoryTitle.text = "Podcast"
+            
+        }
+    
+}
+
+
 }
