@@ -26,7 +26,6 @@ class LeadershipViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        // tabBarController?.tabBar.isHidden = true // may not be needed to be hidden /Users/admin/Downloads/SWIFT/CHURCH/sgbc/sgbc/Controller/LeadershipViewController.swift
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

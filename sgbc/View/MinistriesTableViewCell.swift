@@ -21,7 +21,6 @@ class MinistriesTableViewCell: UITableViewCell {
     func configureCell(with ministry: [Ministry], atIndex indexPath: IndexPath){
         ministriesImageView.image = UIImage(named: ministry[indexPath.row].imageName)
         minstriesLabel.text = ministry[indexPath.row].ministryName
-        
     }
     
     

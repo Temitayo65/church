@@ -30,14 +30,14 @@ class SermonTableViewCell: UITableViewCell {
     }
     
     func configureCell(with sermon: [Sermon], atIndex indexPath: IndexPath){
-        self.sermonImageView.image = UIImage(named: sermon[indexPath.row].imageName)
-        self.sermonTitleLabel.text = sermon[indexPath.row].title
-        self.sermonTextLabel.text = sermon[indexPath.row].text
-        self.sermonTitleLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        self.sermonDateLabel.text = sermon[indexPath.row].date
-        self.sermonDateLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        self.preacherLabel.text = sermon[indexPath.row].preacher
-        self.preacherLabel.textColor = UIColor(red: 0.24, green: 0.40, blue: 0.78, alpha: 1.0)
+        sermonImageView.image = UIImage(named: sermon[indexPath.row].imageName)
+        sermonTitleLabel.text = sermon[indexPath.row].title
+        sermonTextLabel.text = sermon[indexPath.row].text
+        sermonTitleLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        sermonDateLabel.text = sermon[indexPath.row].date
+        sermonDateLabel.textColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        preacherLabel.text = sermon[indexPath.row].preacher
+        preacherLabel.textColor = UIColor(red: 0.24, green: 0.40, blue: 0.78, alpha: 1.0)
     }
     
 }

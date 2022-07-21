@@ -25,10 +25,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImageView.image = UIImage(named:"profile")
-        
         signInButton.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1)
-        
-        
     }
     
 

@@ -10,9 +10,7 @@ import UIKit
 class NewsDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var newsDetailsImageView: UIImageView!
-    
     @IBOutlet weak var newsDetailsFirstContent: UILabel!
-    
     @IBOutlet weak var newsDetailsSecondContent: UILabel!
     
     override func awakeFromNib() {
@@ -21,13 +19,12 @@ class NewsDetailsTableViewCell: UITableViewCell {
     }
     
     
-    func configureCell(with info: [News], atIndex indexPath: IndexPath){
-        newsDetailsImageView.image = UIImage(named: info[indexPath.row].imageName)
-        let details = info[indexPath.row].newsContent
+    func configureCell(with info: News){
+        newsDetailsImageView.image = UIImage(named: info.imageName)
+        let details = info.newsContent
         let index = details.firstIndex(of: ".")!
         let first_part = String(details[...index])
-        let last_part = String(details.suffix(details.count - first_part.count))
-        //print(last_part) // Debug rhis part when you awaken
+        let last_part = String(details.suffix(details.count - first_part.count - 1))
         newsDetailsFirstContent.text = first_part
         newsDetailsSecondContent.text = last_part
         newsDetailsImageView.layer.cornerRadius = 10

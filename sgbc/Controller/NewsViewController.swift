@@ -11,6 +11,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     let newsData: [News] = NewsData().getNews()
     var headerSent: String = ""
+    var newsToBeSent: News = News(topic: "", imageName: "", newsContent: "", date: "")
     
     @IBOutlet weak var newsTableView: UITableView!
     
@@ -26,10 +27,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationController?.navigationBar.isHidden = true
         
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         navigationController?.navigationBar.isHidden = false
-        // let backButtonBackgroundImage = UIImage(systemName: "arrow.backward")
         let backBarButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButton
     }
@@ -48,27 +49,24 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(180)
-        
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newsdetailsidentifier" {
             let newsDetailsVC = segue.destination as! NewsDetailsViewController
             newsDetailsVC.headerSent = headerSent
+            newsDetailsVC.newsdetails = newsToBeSent
         }
         
         
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             headerSent = newsData[indexPath.row].topic
+            newsToBeSent = newsData[indexPath.row]
             performSegue(withIdentifier: "newsdetailsidentifier", sender: self)
-        
     }
-  
-    
-    
     
     
 }

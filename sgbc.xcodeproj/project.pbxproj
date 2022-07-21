@@ -219,10 +219,10 @@
 				846A82D8287CB7FB0094438C /* PlayerViewController.swift */,
 				84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */,
 				84618A0F287F0C4E00F31F5B /* NewsViewController.swift */,
+				8430E6F1287F8CEC0025287E /* NewsDetailsViewController.swift */,
 				84618A1B287F1E9500F31F5B /* AboutViewController.swift */,
 				842B8C6F287F4FB2008B0BF3 /* LeadershipViewController.swift */,
 				84DEC829287F6FBF009D2DD9 /* MinistriesViewController.swift */,
-				8430E6F1287F8CEC0025287E /* NewsDetailsViewController.swift */,
 				843FCA5A2881D19B009EFF33 /* ProfileViewController.swift */,
 				84EF25BE2885BC860086F3A0 /* SearchViewController.swift */,
 			);

@@ -11,7 +11,7 @@ class NewsDetailsViewController: UIViewController , UITableViewDelegate, UITable
     
 
     @IBOutlet weak var NewsDetailsTableView: UITableView!
-    let newsdetails = NewsData().getNews()
+    var newsdetails: News = News(topic: "", imageName: "", newsContent: "", date: "")
     var headerSent: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,22 +37,26 @@ class NewsDetailsViewController: UIViewController , UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "newsdetailscellidentifier", for: indexPath) as? NewsDetailsTableViewCell{
-            cell.configureCell(with: newsdetails, atIndex: indexPath)
+            cell.configureCell(with: newsdetails)
             return cell 
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        CGFloat(1500)
+        CGFloat(900)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {        
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {     
         return headerSent
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 
 

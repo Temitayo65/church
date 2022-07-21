@@ -23,6 +23,5 @@ class MediaTableViewCell: UITableViewCell {
         categoryLabel.text = category[indexPath.row]
         categoryLabel.textAlignment = .center
         categoryImageView.image = UIImage(named: "ministries")
-        
     }
 }

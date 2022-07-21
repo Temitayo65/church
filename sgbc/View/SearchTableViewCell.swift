@@ -40,7 +40,6 @@ class SearchTableViewCell: UITableViewCell {
             sermonPodcastImageView.image = UIImage(named: data.podcastImageName)
             sermonPodcastTitle.text = data.podcastTitle
             categoryTitle.text = "Podcast"
-            
         }
     
 }

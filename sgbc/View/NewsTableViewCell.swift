@@ -27,7 +27,6 @@ class NewsTableViewCell: UITableViewCell {
         newsContent.textAlignment = .left
         dateLabel.textAlignment = .left
         newsImageView.layer.cornerRadius = 10
-        
     }
     
     

@@ -83,6 +83,12 @@ class PlayerTransitionViewController: UIViewController {
         performSegue(withIdentifier: "PlayingSermonIdentifier", sender: self)
     }
     
+    @IBAction func downloadButtonPressed(_ sender: Any) {
+    }
+    @IBAction func shareButttonPressed(_ sender: Any) {
+    }
+    
+    
     func setLoadView(data dataToLoad: Any){
         if dataToLoad is Sermon{
         let sermon = dataToLoad as! Sermon
@@ -91,7 +97,7 @@ class PlayerTransitionViewController: UIViewController {
         transitionImageView.image = UIImage(named: sermon.imageName)
         synopsisTextLabel.text = sermon.synopsis
         synopsisTextLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        synopsisLogoImageView.image = UIImage(named: "synopsis")
+        synopsisLogoImageView.image = UIImage(named: "synops")
         preacherTitleLabel.text = sermon.preacher
         preacherTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         sermonTitleLabel.text = sermon.title
@@ -104,7 +110,7 @@ class PlayerTransitionViewController: UIViewController {
         transitionImageView.image = UIImage(named: podcast.podcastImageName)
         synopsisTextLabel.text = "We pray you be Blessed as You Listen"
         synopsisTextLabel.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        synopsisLogoImageView.image = UIImage(named: "synopsis")
+        synopsisLogoImageView.image = UIImage(named: "synops")
         preacherTitleLabel.text = "SGBC"
         preacherTitleLabel.textColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
         sermonTitleLabel.text = podcast.podcastTitle
