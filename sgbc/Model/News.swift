@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 struct News{
-    
     var topic: String
     var imageName: String
     var newsContent: String
