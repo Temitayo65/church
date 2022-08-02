@@ -562,6 +562,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="1X"/>
+                                <connections>
+                                    <action selector="rateButtonPressed:" destination="6aa-4u-VQ6" eventType="touchUpInside" id="wNi-tW-YGC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-Gl-2Vp">
                                 <rect key="frame" x="329" y="652" width="40" height="38"/>
@@ -606,6 +609,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="66Q-yF-ULw"/>
                     <connections>
+                        <outlet property="audioProgressView" destination="Rpk-1n-6Ex" id="h2B-pn-B5w"/>
                         <outlet property="playButton" destination="hTI-zQ-uAk" id="tpx-Co-rXX"/>
                         <outlet property="preacherTitle" destination="6Wv-Jz-7xn" id="CS8-O3-NT5"/>
                         <outlet property="segmentChoice" destination="LGz-Sc-loo" id="AG6-hU-nTr"/>
