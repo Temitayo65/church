@@ -19,13 +19,15 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var audioProgressView: UIProgressView!
     
     var sermonUpdate: Any = ""
-    var sermonGetter = SermonManager() // trying out the sermon manager - still needs updating / refactoring
+    // var sermonGetter: SermonManager! // trying out the sermon manager - still needs updating / refactoring
+    // the sermonGetter should now be replaced with the currrentURL which is passed from the previous viewcontroller during performsegue // not necessarily for now until a refactor
     var player: AudioPlayer!
     var playIsOn: Bool = false
     var playerIsLoaded: Bool = false
     var audioItem: DefaultAudioItem!
     var copiedURL: String = ""
     var currentURL: String! // this will be passed from the tableview when tapped
+    var allData: [Any]?
 
 
     
@@ -33,14 +35,16 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.27, green: 0.37, blue: 0.46, alpha: 1.0)
+        
+        
+        
+        
+        
         setLoadView(data: sermonUpdate) // what does this do ?
-        
-        
         player = AudioPlayer()
         player.timeEventFrequency = .everySecond
         player.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
         
-        // player.event.stateChange.addListener(self, handleAudioPlayerStateChange)
         
         
         // The audioitem here then becomes the currentURL loaded from the tap on the table cell

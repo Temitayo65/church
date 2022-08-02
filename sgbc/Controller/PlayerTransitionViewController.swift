@@ -24,6 +24,9 @@ class PlayerTransitionViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         bottomView.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+        
+        
+        
         if dataFromSearch is Sermon{
             let dataToSet = dataFromSearch as! Sermon
             setLoadView(data: dataToSet)

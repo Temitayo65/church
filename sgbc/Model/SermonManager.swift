@@ -34,6 +34,7 @@ struct SermonManager{
                         for item in decodedData.data{
                             links.append(item)
                         }
+                        
                     } catch {
                         print(error)
                     }
