@@ -8,9 +8,14 @@
 import UIKit
 import SwiftAudio
 import AVFAudio
+import AVFoundation
+public var gloabalClickedRow: Int = -1
+public var globalPlayerState: AudioPlayerState = .idle
+public var globalAudioPlayer = AudioPlayer()
 
 class PlayerViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var segmentChoice: UISegmentedControl!
     @IBOutlet weak var sermonImage: UIImageView!
     @IBOutlet weak var sermonTitle: UILabel!
@@ -19,47 +24,21 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var audioProgressView: UIProgressView!
     
     var sermonUpdate: Any = ""
-    // var sermonGetter: SermonManager! // trying out the sermon manager - still needs updating / refactoring
-    // the sermonGetter should now be replaced with the currrentURL which is passed from the previous viewcontroller during performsegue // not necessarily for now until a refactor
+    var sermonGetter =  SermonManager()
     var player: AudioPlayer!
-    var playIsOn: Bool = false
-    var playerIsLoaded: Bool = false
     var audioItem: DefaultAudioItem!
-    var copiedURL: String = ""
-    var currentURL: String! // this will be passed from the tableview when tapped
-    var allData: [Any]?
-
-
+    var currentURL: String = "" // this will be passed from the tableview when tapped
+    var indexTapped: Int!
     
- 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.27, green: 0.37, blue: 0.46, alpha: 1.0)
-        
-        
-        
-        
-        
-        setLoadView(data: sermonUpdate) // what does this do ?
+        setLoadView(data: sermonUpdate)
         player = AudioPlayer()
         player.timeEventFrequency = .everySecond
         player.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
-        
-        
-        
-        // The audioitem here then becomes the currentURL loaded from the tap on the table cell
-        // This will be compared to the copiedURL inherent in the tableViewController
-        // The comparison will be such that if they are same, then nothing new is loaded
-        // else, the previous audio player session will be stopped and something new will be loaded
-        /*
-         
-         if copiedURL != currentURL{
-         audioItem = DefaultAudioItem(audioUrl: currentURL, sourceType: .stream)
-         }
-         
-         */
-        audioItem = DefaultAudioItem(audioUrl: "https://sgbc.ams3.digitaloceanspaces.com/January-2021/Assurance-of-Having-Eternal-Life-2021-01-03.mp3?AWSAccessKeyId=C663TNSAPB6NR24LMYTF&Expires=1659451449&Signature=c9QYAgQUMKimffUwr19wV%2BvCSvk%3D", sourceType: .stream)
-        print(player.currentTime)
+        print("The value of the clicked row is", gloabalClickedRow)
+        print("This is the current URL that was passed", currentURL)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,15 +60,14 @@ class PlayerViewController: UIViewController {
             // Handle the event
         switch state {
         case .buffering:
-            print("Audio is still buffering")
+            print("Audio is  buffering")
             return
         case .playing:
-            print("Audio is still playing")
+            print("Audio is  playing")
             return
         case .paused:
-            print("Audio has been paused")
+            print("Audio is paused")
             return
-            
         case .idle:
             print("Engine is idle")
             return
@@ -104,36 +82,73 @@ class PlayerViewController: UIViewController {
     }
     
     func handleAudioPlayerTimeEvent(event: AudioPlayer.UpdateDurationEventData){
-        print("The current time is: ", player.currentTime)
-        print("The duration is: ", player.duration)
-        print("The fraction is: ", player.currentTime/player.duration)
         DispatchQueue.main.async { [self] in
             self.audioProgressView.setProgress(Float(self.player.currentTime/self.player.duration), animated: true)
-            
         }
-        
+    }
+    
+    func changeUIOnButtonClick(){
+        let playerState = player.playerState
+        if playerState == .playing{
+            playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+        }
+        else{
+            playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+        }
         
     }
     
     @IBAction func playAudio(_ sender: Any) {
         player.event.stateChange.addListener(self, handleAudioPlayerStateChange)
         player.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
+        let playerState = player.playerState
+        print("This is the player state:", playerState)
+        print("The current url is", currentURL)
         
-        if !playerIsLoaded{
-            try! player.load(item: audioItem, playWhenReady: true)
+        if globalPlayerState == .idle{
+            print("Starting out initially")
+            globalPlayerState = .playing
+            gloabalClickedRow = indexTapped
+            changeUIOnButtonClick()
+            loadAudio()
             player.play()
-            playerIsLoaded = true
         }
-        if !playIsOn{
-            player.play()
-            playIsOn = true
-        }
-        else{
+        else if globalPlayerState == .playing && indexTapped == gloabalClickedRow{
+            print("Pausing after having started")
+            changeUIOnButtonClick()
+            globalPlayerState = .paused
+            print("Global row on click", gloabalClickedRow)
             player.pause()
-            playIsOn = false
+        }
+        else if globalPlayerState == .paused && indexTapped == gloabalClickedRow{
+            print("Playing after having paused")
+            changeUIOnButtonClick()
+            globalPlayerState = .playing
+            player.play()
+        }
+        else if globalPlayerState == .playing && indexTapped != gloabalClickedRow{
+            print("Audio has been changed because of different row click and is now playing new audio")
+            changeUIOnButtonClick()
+            player.stop()
+            loadAudio()
+            gloabalClickedRow = indexTapped
+            player.play()
+        }
+        else if globalPlayerState == .paused && indexTapped != gloabalClickedRow{
+            print("Audio has been changed because of different row click with previous audio paused and is now playing new audio")
+            changeUIOnButtonClick()
+            player.stop()
+            loadAudio()
+            gloabalClickedRow = indexTapped
+            player.play()
         }
         
+    }
     
+    
+    func loadAudio(){
+        audioItem = DefaultAudioItem(audioUrl: self.currentURL, sourceType: .stream)
+        try! player.load(item: audioItem, playWhenReady: true)
     }
     
     @IBAction func rateButtonPressed(_ sender: UIButton) {
@@ -160,11 +175,14 @@ class PlayerViewController: UIViewController {
             sermonTitle.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             preacherTitle.text = "SGBC"
             preacherTitle.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            
         }
-        
     }
 
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
 }
 

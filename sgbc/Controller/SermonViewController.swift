@@ -20,6 +20,7 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
     let sermons = SermonData().getSermon()
     var sermonUpdate = Sermon()
     var whiteColorValues = CGColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    var indexTapped: Int = 0
     
 
     override func viewDidLoad() {
@@ -73,8 +74,9 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sermonUpdate = Sermon(by: sermons[indexPath.row].preacher, from: sermons[indexPath.row].text, on: sermons[indexPath.row].title, onThe: sermons[indexPath.row].date, withImage: sermons[indexPath.row].imageName, withSumamry: sermons[indexPath.row].synopsis)
+        indexTapped = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "PlayerTransitionIdentifier", sender: self)
+        performSegue(withIdentifier: "PlayerTransitionIdentifier", sender: self)
     }
     
    
@@ -83,6 +85,7 @@ class SermonViewController: UIViewController , UITableViewDelegate, UITableViewD
         if segue.identifier == "PlayerTransitionIdentifier" {
             let playerTransitionVC = segue.destination as! PlayerTransitionViewController
             playerTransitionVC.sermonUpdate = sermonUpdate
+            playerTransitionVC.indexTapped = self.indexTapped
         }
         else if segue.identifier == "SermonBySpeakersIdentifier"{
             let sermonBySpeakersTransitionVC = segue.destination as! SermonBySpeakersViewController

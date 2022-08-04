@@ -6,19 +6,20 @@
 //
 
 import Foundation
-
+protocol SermonManagerDelegate{
+    func didUpdateSermonData(sermonDatas: String)
+}
 
 struct SermonManager{
-    
     let baseURL = "https://still-savannah-43128.herokuapp.com/media/audios"
-    var all_links: [Datas] = []
+    var delegate: SermonManagerDelegate?
+   
     
-    func fetchSermons(sermonURL: String){
-        let sermonURL = baseURL
-        performRequest(urlString: sermonURL)
+    func fetchSermons(index: Int){
+        performRequest(urlString: baseURL, index: index)
     }
     
-    func performRequest(urlString: String ){
+    func performRequest(urlString: String , index: Int){
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -27,24 +28,33 @@ struct SermonManager{
                     return
                 }
                 if let safeData = data{
-                    do{
-                        let decoder = JSONDecoder()
-                        let decodedData =  try decoder.decode(SermonsData.self, from: safeData)
-                        var links: [Datas] = []
-                        for item in decodedData.data{
-                            links.append(item)
-                        }
-                        
-                    } catch {
-                        print(error)
+                    if let links = parseJSON(data: safeData, index: index){
+                        self.delegate?.didUpdateSermonData(sermonDatas: links)
                     }
                 }
             }
             task.resume()
-            
         }
                 
     }
     
+    func parseJSON(data: Data, index: Int)-> String?{
+        do{
+            let decoder = JSONDecoder()
+            let decodedData =  try decoder.decode(SermonsData.self, from: data)
+            let link = decodedData.data[index].sermonAudio.audio_url
+            print("Index:",index,"Link:", link )
+            return link
+            
+        } catch {
+            print(error)
+            return nil
+        }
+        
+    }
     
+   
+        
 }
+    
+
