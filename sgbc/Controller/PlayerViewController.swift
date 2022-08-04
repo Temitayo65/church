@@ -25,7 +25,6 @@ class PlayerViewController: UIViewController {
     
     var sermonUpdate: Any = ""
     var sermonGetter =  SermonManager()
-    var player: AudioPlayer!
     var audioItem: DefaultAudioItem!
     var currentURL: String = "" // this will be passed from the tableview when tapped
     var indexTapped: Int!
@@ -34,9 +33,9 @@ class PlayerViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.27, green: 0.37, blue: 0.46, alpha: 1.0)
         setLoadView(data: sermonUpdate)
-        player = AudioPlayer()
-        player.timeEventFrequency = .everySecond
-        player.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
+        globalAudioPlayer.timeEventFrequency = .everySecond
+        globalAudioPlayer.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
+        changeUIOnButtonClick()
         print("The value of the clicked row is", gloabalClickedRow)
         print("This is the current URL that was passed", currentURL)
     }
@@ -51,13 +50,6 @@ class PlayerViewController: UIViewController {
     }
     
     func handleAudioPlayerStateChange(state: AudioPlayerState) {
-        
-//        DispatchQueue.main.async {
-//            [self] in
-//            self.player.rate = 2.0
-//            self.player.updateNowPlayingPlaybackValues()
-//        }
-            // Handle the event
         switch state {
         case .buffering:
             print("Audio is  buffering")
@@ -81,79 +73,91 @@ class PlayerViewController: UIViewController {
         
     }
     
-    func handleAudioPlayerTimeEvent(event: AudioPlayer.UpdateDurationEventData){
-        DispatchQueue.main.async { [self] in
-            self.audioProgressView.setProgress(Float(self.player.currentTime/self.player.duration), animated: true)
-        }
-    }
-    
     func changeUIOnButtonClick(){
-        let playerState = player.playerState
-        if playerState == .playing{
+        let playerState = globalPlayerState
+        if playerState == .paused{
             playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         }
-        else{
+        else if playerState == .playing{
             playButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+        }
+        else if playerState == .idle {
+            playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         }
         
     }
     
     @IBAction func playAudio(_ sender: Any) {
-        player.event.stateChange.addListener(self, handleAudioPlayerStateChange)
-        player.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
-        let playerState = player.playerState
-        print("This is the player state:", playerState)
+        globalAudioPlayer.event.stateChange.addListener(self, handleAudioPlayerStateChange)
+        globalAudioPlayer.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
         print("The current url is", currentURL)
         
         if globalPlayerState == .idle{
             print("Starting out initially")
             globalPlayerState = .playing
             gloabalClickedRow = indexTapped
-            changeUIOnButtonClick()
             loadAudio()
-            player.play()
+            globalAudioPlayer.play()
+            changeUIOnButtonClick()
+            
         }
         else if globalPlayerState == .playing && indexTapped == gloabalClickedRow{
             print("Pausing after having started")
-            changeUIOnButtonClick()
             globalPlayerState = .paused
-            print("Global row on click", gloabalClickedRow)
-            player.pause()
+            globalAudioPlayer.pause()
+            changeUIOnButtonClick()
         }
         else if globalPlayerState == .paused && indexTapped == gloabalClickedRow{
             print("Playing after having paused")
-            changeUIOnButtonClick()
             globalPlayerState = .playing
-            player.play()
+            globalAudioPlayer.play()
+            changeUIOnButtonClick()
         }
         else if globalPlayerState == .playing && indexTapped != gloabalClickedRow{
             print("Audio has been changed because of different row click and is now playing new audio")
+            globalAudioPlayer.stop()
             changeUIOnButtonClick()
-            player.stop()
             loadAudio()
             gloabalClickedRow = indexTapped
-            player.play()
+            globalAudioPlayer.play()
+            changeUIOnButtonClick()
         }
         else if globalPlayerState == .paused && indexTapped != gloabalClickedRow{
             print("Audio has been changed because of different row click with previous audio paused and is now playing new audio")
+            globalAudioPlayer.stop()
             changeUIOnButtonClick()
-            player.stop()
             loadAudio()
             gloabalClickedRow = indexTapped
-            player.play()
+            globalAudioPlayer.play()
+            changeUIOnButtonClick()
         }
         
+    }
+    func handleAudioPlayerTimeEvent(event: AudioPlayer.UpdateDurationEventData){
+        DispatchQueue.main.async { [self] in
+            if gloabalClickedRow == self.indexTapped{
+                self.audioProgressView.setProgress(Float(globalAudioPlayer.currentTime/globalAudioPlayer.duration), animated: true)
+            }
+            else{
+                self.playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+            }
+        }
     }
     
     
     func loadAudio(){
         audioItem = DefaultAudioItem(audioUrl: self.currentURL, sourceType: .stream)
-        try! player.load(item: audioItem, playWhenReady: true)
+        try! globalAudioPlayer.load(item: audioItem, playWhenReady: true)
     }
     
     @IBAction func rateButtonPressed(_ sender: UIButton) {
         // write logic to increase rate here. This should affect whatis in the DispatchQueue.main.async
-        
+        //        DispatchQueue.main.async {
+        //            [self] in
+        //            self.player.rate = 2.0
+        //            self.player.updateNowPlayingPlaybackValues()
+        //        }
+                    // Handle the event
     }
     
     

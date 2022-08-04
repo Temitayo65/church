@@ -531,7 +531,7 @@
                                     <action selector="playAudio:" destination="6aa-4u-VQ6" eventType="touchUpInside" id="nQQ-Xz-iaz"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="Rpk-1n-6Ex">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rpk-1n-6Ex">
                                 <rect key="frame" x="75.5" y="539" width="263" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="263" id="pvn-Bc-50H"/>
