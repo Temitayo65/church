@@ -22,12 +22,14 @@ class PlayerViewController: UIViewController {
     @IBOutlet weak var preacherTitle: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var audioProgressView: UIProgressView!
+    @IBOutlet weak var rateButton: UIButton!
     
     var sermonUpdate: Any = ""
     var sermonGetter =  SermonManager()
     var audioItem: DefaultAudioItem!
     var currentURL: String = "" // this will be passed from the tableview when tapped
     var indexTapped: Int!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,13 +153,17 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func rateButtonPressed(_ sender: UIButton) {
-        // write logic to increase rate here. This should affect whatis in the DispatchQueue.main.async
-        //        DispatchQueue.main.async {
-        //            [self] in
-        //            self.player.rate = 2.0
-        //            self.player.updateNowPlayingPlaybackValues()
-        //        }
-                    // Handle the event
+        if globalAudioPlayer.rate != 2.0 {
+                DispatchQueue.main.async {
+                    globalAudioPlayer.rate = 2.0
+                    globalAudioPlayer.updateNowPlayingPlaybackValues()
+                    self.rateButton.titleLabel?.text = "2x"
+                }
+        }
+        else{
+            globalAudioPlayer.rate = 1.0
+            self.rateButton.titleLabel?.text = "1x"
+        }
     }
     
     

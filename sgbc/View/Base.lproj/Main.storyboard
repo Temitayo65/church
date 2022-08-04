@@ -561,7 +561,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="jPw-O7-MIi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="1X"/>
+                                <buttonConfiguration key="configuration" style="plain" title="1x"/>
                                 <connections>
                                     <action selector="rateButtonPressed:" destination="6aa-4u-VQ6" eventType="touchUpInside" id="wNi-tW-YGC"/>
                                 </connections>
@@ -623,6 +623,7 @@
                         <outlet property="audioProgressView" destination="Rpk-1n-6Ex" id="h2B-pn-B5w"/>
                         <outlet property="playButton" destination="hTI-zQ-uAk" id="tpx-Co-rXX"/>
                         <outlet property="preacherTitle" destination="6Wv-Jz-7xn" id="CS8-O3-NT5"/>
+                        <outlet property="rateButton" destination="6kg-WC-8Za" id="uwu-Zt-CtB"/>
                         <outlet property="segmentChoice" destination="LGz-Sc-loo" id="AG6-hU-nTr"/>
                         <outlet property="sermonImage" destination="hHh-jT-Zdd" id="dJB-T7-aOH"/>
                         <outlet property="sermonTitle" destination="t4s-hC-vcx" id="FYp-tu-zC5"/>
