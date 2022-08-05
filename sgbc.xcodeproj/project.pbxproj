@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4452780E14785A80AE4487 /* Pods_sgbc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9E3D51617892BC47B1CCD4 /* Pods_sgbc.framework */; };
 		842B8C70287F4FB2008B0BF3 /* LeadershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8C6F287F4FB2008B0BF3 /* LeadershipViewController.swift */; };
 		842B8C73287F4FD3008B0BF3 /* LeadershipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B8C71287F4FD3008B0BF3 /* LeadershipCollectionViewCell.swift */; };
 		842B8C74287F4FD3008B0BF3 /* LeadershipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B8C72287F4FD3008B0BF3 /* LeadershipCollectionViewCell.xib */; };
@@ -53,6 +54,9 @@
 		84CF1F20287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1F1E287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift */; };
 		84CF1F21287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1F1F287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib */; };
 		84DEC82A287F6FBF009D2DD9 /* MinistriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DEC829287F6FBF009D2DD9 /* MinistriesViewController.swift */; };
+		84E7AE74288D77D500E81C71 /* SermonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE73288D77D500E81C71 /* SermonManager.swift */; };
+		84E7AE76288D7ACA00E81C71 /* SermonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE75288D7ACA00E81C71 /* SermonsData.swift */; };
+		84E7AE78288EE8BD00E81C71 /* mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84E7AE77288EE8BD00E81C71 /* mix.wav */; };
 		84E7AEA0287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */; };
 		84ED6601287DF7F0003946D4 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED65FF287DF7F0003946D4 /* HomeTableViewCell.swift */; };
 		84ED6602287DF7F0003946D4 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ED6600287DF7F0003946D4 /* HomeTableViewCell.xib */; };
@@ -77,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14DB8EF3ADD8C1C7E3C9F57C /* Pods-sgbc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sgbc.debug.xcconfig"; path = "Target Support Files/Pods-sgbc/Pods-sgbc.debug.xcconfig"; sourceTree = "<group>"; };
+		532F662EF9037E27F833B4B8 /* Pods-sgbc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sgbc.release.xcconfig"; path = "Target Support Files/Pods-sgbc/Pods-sgbc.release.xcconfig"; sourceTree = "<group>"; };
 		842B8C6F287F4FB2008B0BF3 /* LeadershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadershipViewController.swift; sourceTree = "<group>"; };
 		842B8C71287F4FD3008B0BF3 /* LeadershipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadershipCollectionViewCell.swift; sourceTree = "<group>"; };
 		842B8C72287F4FD3008B0BF3 /* LeadershipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadershipCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -127,10 +133,14 @@
 		84CF1F1E287DB17A006909CE /* SermonBySpeakersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySpeakersCollectionViewCell.swift; sourceTree = "<group>"; };
 		84CF1F1F287DB17A006909CE /* SermonBySpeakersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonBySpeakersCollectionViewCell.xib; sourceTree = "<group>"; };
 		84DEC829287F6FBF009D2DD9 /* MinistriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinistriesViewController.swift; sourceTree = "<group>"; };
+		84E7AE73288D77D500E81C71 /* SermonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonManager.swift; sourceTree = "<group>"; };
+		84E7AE75288D7ACA00E81C71 /* SermonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonsData.swift; sourceTree = "<group>"; };
+		84E7AE77288EE8BD00E81C71 /* mix.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = mix.wav; path = ../../../../EMO/mix.wav; sourceTree = "<group>"; };
 		84E7AE9F287CFC8900C6F2E7 /* SermonBySpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonBySpeakersViewController.swift; sourceTree = "<group>"; };
 		84ED65FF287DF7F0003946D4 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		84ED6600287DF7F0003946D4 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		84EF25BE2885BC860086F3A0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EA9E3D51617892BC47B1CCD4 /* Pods_sgbc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sgbc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4452780E14785A80AE4487 /* Pods_sgbc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +169,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2423B8DAB7B896C1E42C9C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14DB8EF3ADD8C1C7E3C9F57C /* Pods-sgbc.debug.xcconfig */,
+				532F662EF9037E27F833B4B8 /* Pods-sgbc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		276B11F1278DF855B39769AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA9E3D51617892BC47B1CCD4 /* Pods_sgbc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		846A828E287C8E490094438C = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +193,8 @@
 				846A82B0287C8E4B0094438C /* sgbcTests */,
 				846A82BA287C8E4B0094438C /* sgbcUITests */,
 				846A8298287C8E490094438C /* Products */,
+				2423B8DAB7B896C1E42C9C1C /* Pods */,
+				276B11F1278DF855B39769AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +216,7 @@
 				846A82CB287C8E680094438C /* View */,
 				846A82CA287C8E620094438C /* Controller */,
 				846A82A3287C8E4B0094438C /* Assets.xcassets */,
+				84E7AE77288EE8BD00E81C71 /* mix.wav */,
 				846A82A5287C8E4B0094438C /* LaunchScreen.storyboard */,
 				846A82A8287C8E4B0094438C /* Info.plist */,
 			);
@@ -267,6 +298,8 @@
 				8430E6F9288033A90025287E /* Podcast.swift */,
 				8430E6FB288033B30025287E /* Devotional.swift */,
 				8430E6FD288035860025287E /* QA.swift */,
+				84E7AE73288D77D500E81C71 /* SermonManager.swift */,
+				84E7AE75288D7ACA00E81C71 /* SermonsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 846A82C1287C8E4B0094438C /* Build configuration list for PBXNativeTarget "sgbc" */;
 			buildPhases = (
+				9305D9D8CAC2174E47B53131 /* [CP] Check Pods Manifest.lock */,
 				846A8293287C8E490094438C /* Sources */,
 				846A8294287C8E490094438C /* Frameworks */,
 				846A8295287C8E490094438C /* Resources */,
+				B9D7452783538D24AB45F990 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +429,7 @@
 				846A82A2287C8E490094438C /* Main.storyboard in Resources */,
 				84ED6602287DF7F0003946D4 /* HomeTableViewCell.xib in Resources */,
 				84618A0A287ED85700F31F5B /* MediaTableViewCell.xib in Resources */,
+				84E7AE78288EE8BD00E81C71 /* mix.wav in Resources */,
 				84618A14287F0DB900F31F5B /* NewsTableViewCell.xib in Resources */,
 				8430E6F0287F70EA0025287E /* MinistriesTableViewCell.xib in Resources */,
 				842B8C74287F4FD3008B0BF3 /* LeadershipCollectionViewCell.xib in Resources */,
@@ -418,6 +454,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9305D9D8CAC2174E47B53131 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sgbc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9D7452783538D24AB45F990 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sgbc/Pods-sgbc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sgbc/Pods-sgbc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sgbc/Pods-sgbc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		846A8293287C8E490094438C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -428,6 +506,7 @@
 				84618A06287ED83100F31F5B /* MediaViewController.swift in Sources */,
 				84618A1C287F1E9500F31F5B /* AboutViewController.swift in Sources */,
 				8493572A287E0EA6008BC6D1 /* StartingCategories.swift in Sources */,
+				84E7AE76288D7ACA00E81C71 /* SermonsData.swift in Sources */,
 				8430E6EF287F70EA0025287E /* MinistriesTableViewCell.swift in Sources */,
 				843FCA5B2881D19B009EFF33 /* ProfileViewController.swift in Sources */,
 				846A82D9287CB7FB0094438C /* PlayerViewController.swift in Sources */,
@@ -456,6 +535,7 @@
 				84618A10287F0C4E00F31F5B /* NewsViewController.swift in Sources */,
 				846A829D287C8E490094438C /* SceneDelegate.swift in Sources */,
 				8493572E287E1321008BC6D1 /* WelcomeViewController.swift in Sources */,
+				84E7AE74288D77D500E81C71 /* SermonManager.swift in Sources */,
 				84618A13287F0DB900F31F5B /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +708,7 @@
 		};
 		846A82C2287C8E4B0094438C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14DB8EF3ADD8C1C7E3C9F57C /* Pods-sgbc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -657,6 +738,7 @@
 		};
 		846A82C3287C8E4B0094438C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 532F662EF9037E27F833B4B8 /* Pods-sgbc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
