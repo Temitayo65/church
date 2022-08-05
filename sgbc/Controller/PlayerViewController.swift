@@ -90,6 +90,8 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func playAudio(_ sender: Any) {
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try! AVAudioSession.sharedInstance().setActive(true)
         globalAudioPlayer.event.stateChange.addListener(self, handleAudioPlayerStateChange)
         globalAudioPlayer.event.updateDuration.addListener(self, handleAudioPlayerTimeEvent)
         print("The current url is", currentURL)
@@ -143,6 +145,12 @@ class PlayerViewController: UIViewController {
             else{
                 self.playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
             }
+            if globalAudioPlayer.rate == 2.0{
+                self.rateButton.titleLabel?.text = "2x"
+            }
+            else{
+                self.rateButton.titleLabel?.text = "1x"
+            }
         }
     }
     
@@ -153,16 +161,15 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func rateButtonPressed(_ sender: UIButton) {
-        if globalAudioPlayer.rate != 2.0 {
+        if globalAudioPlayer.rate == 1.0 {
                 DispatchQueue.main.async {
                     globalAudioPlayer.rate = 2.0
                     globalAudioPlayer.updateNowPlayingPlaybackValues()
-                    self.rateButton.titleLabel?.text = "2x"
-                }
+            }
         }
         else{
             globalAudioPlayer.rate = 1.0
-            self.rateButton.titleLabel?.text = "1x"
+            
         }
     }
     

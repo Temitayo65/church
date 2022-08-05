@@ -554,7 +554,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="goforward.15" catalog="system" title=""/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-WC-8Za">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-WC-8Za">
                                 <rect key="frame" x="50" y="608" width="40" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="bUP-Er-xuV"/>
