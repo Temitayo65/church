@@ -1,0 +1,6 @@
+framework module Pods_sgbc {
+  umbrella header "Pods-sgbc-umbrella.h"
+
+  export *
+  module * { export * }
+}
