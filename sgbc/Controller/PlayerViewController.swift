@@ -145,7 +145,7 @@ class PlayerViewController: UIViewController {
             else{
                 self.playButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
             }
-            if globalAudioPlayer.rate == 2.0{
+            if globalAudioPlayer.rate == 2.0 && gloabalClickedRow == indexTapped{
                 self.rateButton.titleLabel?.text = "2x"
             }
             else{
